@@ -1,0 +1,220 @@
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #56098ae1 0%, rgba(23, 25, 148, 0.651) 39%, rgba(42, 178, 205, 0.883) 100%);
+    color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial;
+    display: grid;
+    place-items: center;
+    grid-template-rows: auto 50px 400px auto;
+    overflow: hidden;
+    margin: 0;
+}
+
+#title {
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+
+/* Search pokemon--------------------------------------------------------------------------------------------------------------Search pokemon*/
+
+#searchForm {
+    display: grid;
+    place-items: center;
+    width: 20rem;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    z-index: 999;
+}
+
+#searchForm > input {
+    position: absolute;
+    width: 316px;
+    height: 22px;
+    font-size: 18px;
+    font-family: fontawesome, "Helvetica Neue",Helvetica;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.877);
+    background-color: rgb(17, 41, 47);
+    border: 1.2px solid transparent;
+    border-radius: 10px;
+}
+
+::placeholder {
+    color: rgba(216, 216, 216, 0.877);
+    opacity: 1;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+#searchForm > input:focus {
+    outline: none;
+}
+
+#suggestionsDiv {
+    width: 316px;
+    z-index: -1;
+    position: absolute;
+    padding-top: 102px;
+}
+
+#suggestionsDiv > ul{
+    margin: 0;
+    padding: 0;
+}
+
+#suggestionsDiv > ul > li {
+    list-style-type: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgb(19, 88, 179);
+    position: absolute;
+    width: 98%;
+}
+
+#suggestionsDiv > ul > :first-child {
+    height: 24px !important;
+    padding: 20px 0px 0px 5px !important;
+    bottom: 10px;
+}
+
+#suggestionsDiv > ul > :nth-child(2) {
+    top: 92.2px;
+}
+
+#suggestionsDiv > ul > :nth-child(2), #suggestionsDiv > ul > :last-child{
+    border-top: 1.2px solid rgb(46, 46, 46);
+    height: 20px;
+    padding: 5px 0px 5px 5px;
+}
+
+#suggestionsDiv > ul > :nth-child(3) {
+    top: 122px;
+}
+
+#suggestionsDiv > ul > :last-child{
+    border-radius: 0 0 9px 10px;
+}
+
+#suggestionsDiv > ul > li:hover {
+    background: linear-gradient(135deg, #0f4775 0%, rgb(54, 140, 197) 39%, rgb(0, 98, 255) 100%) !important;
+    cursor: pointer;
+}
+
+
+/* PokemonCard------------------------------------------------------------------------------------------------------------------- PokemonCard */
+
+#cardContainer {
+    transition: transform 0.3s ease;
+}
+
+#card {
+    width: 15rem;
+    height: 21rem;
+    border-radius: 20px;
+    transition: transform 1.3s ease;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+#frontOfCard, #backOfCard {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: rgb(255, 255, 255);
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px rgb(29, 9, 31);
+    transition: box-shadow 0.3s ease;
+    backface-visibility: hidden;
+}
+
+#frontOfCard {
+    grid-column-gap: 0rem;
+    grid-template-rows: 1rem 10rem 2rem auto 0rem;
+}
+
+#backOfCard {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #680175 0%, rgba(94, 3, 155, 0.883) 25%, rgba(60, 16, 143, 0.883) 50%, rgba(44, 19, 172, 0.883) 75%, rgba(16, 22, 83, 0.883) 100%);
+}
+
+#pokemonId {
+    width: 80%;
+    text-align: left;
+    position: relative;
+    top: 22px;
+    font-size: 14px;
+}
+
+#pokemonName {
+    height: 3rem;
+}
+
+#pokemonInfoDiv {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#pokemonInfoDiv > div {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+#backOfCard:hover, #frontOfCard:hover {
+    box-shadow: 1.5px 1.5px 8px rgb(29, 9, 31);
+}
+
+#cardContainer:hover  {
+    cursor: pointer;
+    transform: translate(-1px, -1px);
+}
+
+
+/* Buttons------------------------------------------------------------------------------------------------------------------- Buttons */
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+    padding-bottom: 50px;
+}
+
+#buttons > button {
+    border-radius: 50%;
+    border-style: none;
+    height: 3.5rem;
+    width: 3.5rem;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(0, 134, 123);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transform: translate(0px);
+    box-shadow: 1px 1px 3px rgb(0, 0, 0);
+    
+}
+
+#nextButton {
+    background: linear-gradient(225deg, #0509ff98 0%, rgba(23, 148, 131, 0.657) 39%, rgba(0, 98, 255, 0.685) 100%);
+    
+}
+
+#previousButton {
+    background: linear-gradient(135deg, #0509ff98 0%, rgba(23, 148, 131, 0.657) 39%, rgba(0, 98, 255, 0.685) 100%);
+}
+
+#buttons > button:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    background-color: rgb(0, 185, 160);
+}
+

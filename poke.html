@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png">
+    <link rel="stylesheet" href="poke.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <h1 id="title">Pokedex</h1>
+
+
+    <div id="searchForm">
+        <input type="text" id="inputSearch" placeholder="&#xf002">
+        <div id="suggestionsDiv">
+            <ul id="suggestions">
+            </ul>
+        </div>
+    </div>
+
+    <div id="cardContainer">
+        <div id="card">
+
+            <div id="frontOfCard">
+                <div id="pokemonId"></div>
+                    <img width="150" height="150" id="pokemonImage">
+                    <h3 id="pokemonName"></h3>
+                <div id="pokemonInfoDiv">
+                    <div id="pokemonHpDiv">
+                        <h3>HP: </h3>
+                        <h4 id="pokemonhp"></h4>
+                    </div>
+                    <div id = "pokemonTypeDiv">
+                        <h3>Type(s): </h3>
+                        <h4 id="pokemonType"></h4>
+                    </div>
+                </div>
+                <div id="blankSpace"></div>
+            </div>
+        
+            <div id="backOfCard">
+                <img width="80" height="80" id="pokemonImageBack">
+                <h4 id="pokemonAttack"></h4>
+                <h4 id="pokemonDefense"></h4>
+                <h4 id="pokemonHeight"></h4>
+                <h4 id="pokemonWeight"></h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="buttons">
+        <button id="previousButton"><i class="fa fa-arrow-left"></i></button>
+        <button id="nextButton"><i class="fa fa-arrow-right"></i></button>
+    </div>
+
+    
+    <script type="module" src="poke.js"> </script>
+</body>
+</html>
